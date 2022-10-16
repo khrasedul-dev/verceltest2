@@ -8,7 +8,9 @@ const app = express()
 
 // DB Connections
 // mongodb+srv://rasedul20:rasedul20@telegrambot.y4jtfri.mongodb.net/telegramDB
-mongoose.connect(process.env.DB,{useNewUrlParser:true,useUnifiedTopology:true,useFindAndModify: false}).then(()=>console.log("DB is connected!")).catch((e)=>console.log(e))
+mongoose.connect(process.env.DB,{useNewUrlParser:true,useUnifiedTopology:true,useFindAndModify: false})
+.then(()=>console.log("DB is connected!"))
+.catch((e)=>console.log(e))
 
 //bot init
 const bot = new Telegraf(process.env.TOKEN)
