@@ -15,5 +15,7 @@
     "mongoose": "^6.6.5",
     "telegraf": "^4.10.0"
   },
-  "node": "^14"
+  "engines": {
+    "node": "^14"
+  }
 }
