@@ -28,8 +28,12 @@ bot.command('test',ctx=>{
 app.use(bot.webhookCallback('/'))
 
 app.get("/",async (req,res)=>{
-    const data = await respond.find()
-    res.json({data})
+    try {
+        const data = await respond.find()
+        res.json({data})    
+    } catch (error) {
+        res.json({"error":error})
+    }
 })
 
 app.get("/health",(req,res)=>{
