@@ -16,7 +16,7 @@ const bot = new Telegraf(process.env.TOKEN)
 bot.start(ctx=>{
     respond.find()
     .then((data)=>{
-        ctx.reply(data)
+        ctx.reply(data[0].msg)
     })
     .catch((e)=>console.log(e))
 })
