@@ -27,6 +27,11 @@ bot.command('test',ctx=>{
 
 app.use(bot.webhookCallback('/'))
 
+app.get("/",async (req,res)=>{
+    const data = await respond.find()
+    res.json({data})
+})
+
 app.get("/health",(req,res)=>{
     res.sendStatus(200).json({
         "Status": "Site is running"
